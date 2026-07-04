@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  guacamole:
+    image: jwetzell/guacamole:latest
+    container_name: guacamole
+    restart: unless-stopped
+
+    ports:
+      - "8080:8080"
+
+    volumes:
+      - guacamole-data:/config
+
+    environment:
+      TZ: Asia/Ho_Chi_Minh
+
+volumes:
+  guacamole-data:
